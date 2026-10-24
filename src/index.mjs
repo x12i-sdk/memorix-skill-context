@@ -1,0 +1,13 @@
+import assert from 'node:assert/strict';
+import { createMemoryArtifactStore } from '@x12i/memorix-skill-context';
+const store = createMemoryArtifactStore('fixture-store');
+const scope = 'fixture-org/context';
+const first = await store.compareAndSet(scope, 'review-context', null, { text: 'Initial context', evidence: ['record-1'] });
+assert.equal(first.ok, true);
+const stale = await store.compareAndSet(scope, 'review-context', null, { text: 'Conflicting context' });
+assert.equal(stale.ok, false);
+const updated = await store.compareAndSet(scope, 'review-context', first.version, { text: 'Reviewed context', evidence: ['record-1'] });
+assert.equal(updated.ok, true);
+assert.equal((await store.get(scope, 'review-context')).value.text, 'Reviewed context');
+assert.equal(await store.get('other-org/context', 'review-context'), undefined);
+console.log({ first, stale, updated });

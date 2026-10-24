@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "package": "@x12i/memorix-skill-context",
+  "packageVersion": "0.2.1",
+  "npmUrl": "https://www.npmjs.com/package/@x12i/memorix-skill-context",
+  "usageRepository": "https://github.com/x12i-sdk/memorix-skill-context",
+  "sourceRepository": "https://github.com/x12i/memorix-skills",
+  "sourceCommit": "7cbf8b24f4de87d0a0a1b6ee738756a804856de2",
+  "sourcePackageDirectory": "packages/skill-context",
+  "example": {
+    "title": "Save a context artifact with optimistic concurrency",
+    "entrypoint": "src/index.mjs",
+    "command": "npm start",
+    "requiresCredentials": false,
+    "validation": "passed",
+    "validatedAt": "2026-10-24T15:05:58.098822+00:00",
+    "isolatedInstallation": true,
+    "sourceSha256": "265066ed2c8ad31cf20acdca65e79a202415f1be23dda5171091adacfaeaecc9",
+    "manifestSha256": "981c0a7bee4f869ab17b2571034665939f1e0bf35628dec425aee3246af323fb"
+  },
+  "validationFiles": {
+    "src/index.mjs": "265066ed2c8ad31cf20acdca65e79a202415f1be23dda5171091adacfaeaecc9"
+  }
+}
